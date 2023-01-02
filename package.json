@@ -1,10 +1,10 @@
 {
 	"name": "speechka",
 	"version": "0.0.1",
-	"codename": "aqua",
+	"codename": "swim",
 	"repository": {
 		"type": "git",
-		"url": "https://codeberg.org/calckey/calckey.git"
+		"url": "https://github.com/Evgen0922/speechka-dev.git"
 	},
 	"packageManager": "yarn@3.3.1",
 	"workspaces": [
