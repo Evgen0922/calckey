@@ -1,0 +1,26 @@
+pipeline:
+  migrate:
+    image: node:latest
+    commands:
+      - cp .config/ci.yml .config/default.yml
+      - corepack enable
+      - yarn set version berry
+      - yarn install --immutable
+      - yarn build
+      - yarn migrate
+
+services:
+  database:
+    image: postgres:${DATABASE}
+    environment:
+      - POSTGRES_PASSWORD=test
+  redis:
+    image: redis
+
+matrix:
+  DATABASE:
+    - 12
+    - latest
+
+branches:
+  include: [ main, develop, feature/* ]
